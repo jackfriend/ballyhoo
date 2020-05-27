@@ -15,13 +15,13 @@ class Driver():
     def __init__(self, url):
         self.Browser = webdriver.Chrome()
         self.Browser.get(url)
-        
+
     def add_to_cart(self, button_xpath, options):
         """
         add to cart
         """
         button = WebDriverWait(self.Browser, 20).until(
-            EC.presence_of_element_located((By.XPATH, button_xpath))) 
+            EC.presence_of_element_located((By.XPATH, button_xpath)))
         for option in options:      # options = [{xpath: "XPATH", index: "INDEX}...]
             select = Select(self.Browser.find_element_by_xpath(option["xpath"]))
             select.select_by_index(option["index"])
@@ -47,24 +47,23 @@ class Driver():
         """
         process the payments
         """
-        self.Browser.get(checkout)        
+        self.Browser.get(checkout)
         button = WebDriverWait(self.Browser, 10).until(
-           EC.presence_of_element_located((By.XPATH, button_xpath))) 
+           EC.presence_of_element_located((By.XPATH, button_xpath)))
 
-        self.fill_form("order[billing_name]", cc_info.NAME)
-        self.fill_form("order[email]", cc_info.EMAIL)
-        self.fill_form("order[tel]", cc_info.TEL)
-        self.fill_form("order[billing_address]", cc_info.ADDRESS)
-        self.fill_form("order[billing_address_2]", cc_info.ADDRESS_2)
-        self.fill_form("order[billing_zip]", cc_info.ZIP)
-        self.fill_form("order[billing_city]", cc_info.CITY)
-        self.select_by_name("order[billing_state]", cc_info.STATE)
-        self.select_by_name("order[billing_country]", cc_info.COUNTRY)
-        self.fill_form("riearmxa", cc_info.CC_NO)
-        self.select_by_name("credit_card[month]", cc_info.CC_MONTH)
-        self.select_by_name("credit_card[year]", cc_info.CC_YEAR)
-        self.fill_form("credit_card[meknk]", cc_info.CCV)
-    
+        self.fill_form("order[billing_name]", cc_info["NAME"])
+        self.fill_form("order[email]", cc_info["EMAIL"])
+        self.fill_form("order[tel]", cc_info["TEL"])
+        self.fill_form("order[billing_address]", cc_info["ADDRESS"])
+        self.fill_form("order[billing_address_2]", cc_info["ADDRESS_2"])
+        self.fill_form("order[billing_zip]", cc_info["ZIP"])
+        self.fill_form("order[billing_city]", cc_info["CITY"])
+        self.select_by_name("order[billing_state]", cc_info["STATE"])
+        self.select_by_name("order[billing_country]", cc_info["COUNTRY"])
+        self.fill_form("riearmxa", cc_info["CC_NO"])
+        self.select_by_name("credit_card[month]", cc_info["CC_MONTH"])
+        self.select_by_name("credit_card[year]", cc_info["CC_YEAR"])
+        self.fill_form("credit_card[meknk]", cc_info["CCV"])
+
 
         # button.click()
-
