@@ -1,5 +1,6 @@
 from http_requests import *
 import bs4 as BS
+import json as JSON
 
 
 class Supreme():
@@ -36,3 +37,8 @@ class Item():
         self.static_url = static_url
         self.rel_href = rel_href
         self.href = self.static_url + self.rel_href
+        self.href_json = self.href + '.json'
+
+
+
+
