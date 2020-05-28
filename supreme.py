@@ -1,4 +1,4 @@
-from http_requests import *
+from utils import *
 import bs4 as BS
 import json as JSON
 
@@ -24,9 +24,7 @@ class Supreme():
         soup_a = soup_li.div.a
         soup_rel_href = soup_a['href']
         return soup_rel_href
-
-
-
+        
 
 class Item():
     """

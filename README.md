@@ -18,11 +18,11 @@ CC_INFO = {
 	"ADDRESS_2": "",
 	"ZIP": "",
 	"CITY": "",
-	"STATE": 0, 		# index
-	"COUNTRY": 0, 		# index
-	"CC_NO": "",
-	"CC_MONTH": 11,		# index
-	"CC_YEAR": 3, 		# index
+	"STATE": 0, 		  # index (NY = 36)
+	"COUNTRY": 0, 		# index (USA = 0)
+	"CC_NO": "1111 2222 3333 4444", # spaces necessary
+	"CC_MONTH": 0,		# index (01=0, 02=1, 03=2...)
+	"CC_YEAR": 0, 		# index (2020=0, 2021=1, 2022=2...)
 	"CVV": ""
 }
 
@@ -36,8 +36,8 @@ BUTTONS = {
 
 ITEM = {
 	"POSITION": 0		# Index
-	"SIZE": 0, 		# Index
-	"QUANTITY": 0, 		# Index
+	"SIZE": "", 		# Small, Medium, Large, X-Large. Get these values from the UK site
+	"QUANTITY": 0, 		# Index (Best to leave at quanity 1, index=0)
 
 }
 ```
