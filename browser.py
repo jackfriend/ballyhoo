@@ -65,5 +65,8 @@ class Driver():
         self.select_by_name("credit_card[year]", cc_info["CC_YEAR"])
         self.fill_form("credit_card[meknk]", cc_info["CCV"])
 
+        radios = self.Browser.find_elements_by_class_name("iCheck-helper") # the page has two radios
+        radios[1].click() # click the second radio (terms and conditions)
+
 
         # button.click()

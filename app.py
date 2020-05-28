@@ -16,9 +16,9 @@ webpage = Driver(Shirt.href)
 
 options = [
         {"xpath": config.BUTTONS["SIZE"],
-          "index" : config.ITEM["SIZE"]},
-        {"xpath": config.BUTTONS["QUANTITY"],
-          "index": config.ITEM["QUANTITY"]}
+          "index" : config.ITEM["SIZE"]}
+#        {"xpath": config.BUTTONS["QUANTITY"],
+#         "index": config.ITEM["QUANTITY"]}
 ]
 
 webpage.add_to_cart(config.BUTTONS["ADD_TO_CART"], options)
