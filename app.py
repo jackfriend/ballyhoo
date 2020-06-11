@@ -18,8 +18,8 @@ Order = Item("https://www.supremenewyork.com", order_url)
 webpage = Driver(Order.href)
 
 options = [
-        {"xpath": config.BUTTONS["SIZE"],
-         "index" : config.ITEM["SIZE"]}
+        {"xpath": config.BUTTONS["SIZE"]}
+         # "index" : config.ITEM["SIZE"]}
 #        {"xpath": config.BUTTONS["QUANTITY"],
 #         "index": config.ITEM["QUANTITY"]}
 ]

@@ -1,4 +1,5 @@
 from utils import *
+import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -34,7 +35,8 @@ class Driver():
         """
 
         self.Browser.get(checkout)
-        button = wait_until_clickable(self.Browser, button_xpath)
+        time.sleep(0.5)
+        # button = wait_until_clickable(self.Browser, button_xpath)
 
         select_by_name_by_text(self.Browser, "order[billing_name]", cc_info["NAME"])
         select_by_name_by_text(self.Browser, "order[email]", cc_info["EMAIL"])
